@@ -1,0 +1,40 @@
+/* Custom Professional Accents */
+:root {
+    --accent-gold: #c5a059;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom button styles if needed beyond Tailwind */
+.btn-primary {
+    @apply bg-navy text-white px-8 py-3 rounded-sm font-semibold transition-all hover:bg-navy-light;
+}
+
+/* Subtle link hover underline */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent-gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Custom background patterns */
+.bg-grid-slate {
+    background-image: radial-gradient(circle, #64748b 1px, transparent 1px);
+    background-size: 20px 20px;
+}

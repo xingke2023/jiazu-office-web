@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>財富家族辦公室 | 領先的家族辦公室軟體系統</title>
+    <meta name="description" content="財富家族辦公室：適用於各類資產、實體及世代的家族辦公室軟體。提供先進的資產管理與數據分析解決方案。">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#061121', // Masttro style deep navy
+                            light: '#0a192f',
+                            lighter: '#112240',
+                        },
+                        slate: {
+                            DEFAULT: '#94a3b8', // Cool slate blue for text
+                            dark: '#475569',
+                            light: '#cbd5e1',
+                        },
+                        accent: {
+                            gold: '#c5a059',
+                            goldLight: '#d4b781',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        tightest: '-.075em',
+                        tighter: '-.05em',
+                        tight: '-.025em',
+                        wide: '.025em',
+                        wider: '.05em',
+                        widest: '.1em',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .glass-nav {
+            background: rgba(6, 17, 33, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .text-gradient-gold {
+            background: linear-gradient(to right, #c5a059, #f1d39b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .feature-card {
+            background: #0a192f;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .feature-card:hover {
+            border-color: #c5a059;
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-navy text-white font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 glass-nav border-b border-white/5">
+        <nav class="container mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="#" class="flex items-center gap-5 group">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 rounded-2xl flex items-center justify-center shadow-xl shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-white" aria-hidden="true">
+                            <path d="M3 3v16a2 2 0 0 0 2 2h16"></path>
+                            <path d="M18 17V9"></path>
+                            <path d="M13 17V5"></path>
+                            <path d="M8 17v-3"></path>
+                        </svg>
+                    </div>
+                    <div class="hidden sm:block">
+                        <h1 class="text-3xl font-extrabold tracking-tighter leading-none text-white">MacroData</h1>
+                        <p class="text-[11px] font-bold tracking-[0.2em] uppercase mt-1.5 text-blue-400/80">Insurance Intelligence</p>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#solutions" class="text-base font-normal tracking-widest uppercase text-white hover:text-accent-gold transition-colors">解決方案</a>
+                <a href="#platform" class="text-base font-normal tracking-widest uppercase text-white hover:text-accent-gold transition-colors">平台功能</a>
+                <a href="#security" class="text-base font-normal tracking-widest uppercase text-white hover:text-accent-gold transition-colors">安全保障</a>
+                <a href="http://119.28.6.161:8989/admin/login" target="_blank" rel="noopener" class="bg-accent-gold text-navy px-8 py-3 rounded-full text-base font-medium tracking-widest uppercase hover:bg-accent-goldLight transition-all">
+                    預約演示
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy border-b border-white/5 px-6 py-8 space-y-6">
+            <a href="#solutions" class="block text-base font-normal tracking-widest uppercase text-white">解決方案</a>
+            <a href="#platform" class="block text-base font-normal tracking-widest uppercase text-white">平台功能</a>
+            <a href="#security" class="block text-base font-normal tracking-widest uppercase text-white">安全保障</a>
+            <a href="http://119.28.6.161:8989/admin/login" target="_blank" rel="noopener" class="block bg-accent-gold text-navy px-6 py-4 rounded-full text-center text-base font-medium tracking-widest uppercase">預約演示</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[radial-gradient(circle_at_top_right,_#112240_0%,_#061121_60%)]">
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="max-w-5xl">
+                    <h2 class="text-accent-gold text-xs font-black tracking-[0.3em] uppercase mb-6">
+                        Wealth Family Office
+                    </h2>
+                    <h1 class="text-4xl md:text-7xl font-extrabold tracking-tightest leading-tight mb-8">
+                        適用於各類資產、實體及世代的<br>
+                        <span class="text-gradient-gold">家族辦公室軟體</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate mb-12 max-w-3xl leading-relaxed">
+                        串聯所有資料來源、自動化手動工作流程、淘汰試算表，並針對整個超高淨值客戶投資組合提供即時且安全的報表。
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center gap-6">
+                        <a href="#" class="w-full sm:w-auto bg-white text-navy px-10 py-5 rounded-full font-black text-xs tracking-widest uppercase hover:bg-accent-gold transition-all">
+                            立即諮詢專家
+                        </a>
+                        <a href="#" class="w-full sm:w-auto flex items-center justify-center gap-3 text-white group">
+                            <span class="w-12 h-12 flex items-center justify-center border border-white/20 rounded-full group-hover:border-accent-gold transition-colors">
+                                <i class="fa-solid fa-play text-xs text-accent-gold"></i>
+                            </span>
+                            <span class="text-xs font-bold tracking-widest uppercase">觀看產品演示</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Abstract Background Visual -->
+            <div class="absolute right-[-10%] top-1/2 -translate-y-1/2 w-1/2 h-full opacity-20 pointer-events-none">
+                <div class="relative w-full h-full">
+                    <div class="absolute inset-0 border-[1px] border-slate/30 rounded-full animate-[spin_60s_linear_infinite]"></div>
+                    <div class="absolute inset-20 border-[1px] border-accent-gold/20 rounded-full animate-[spin_40s_linear_infinite_reverse]"></div>
+                    <div class="absolute inset-40 border-[1px] border-slate/10 rounded-full"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats/Logo Bar -->
+        <section class="py-12 border-y border-white/5 bg-navy">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center text-center">
+                    <div>
+                        <p class="text-3xl font-extrabold mb-1">10,000+</p>
+                        <p class="text-[10px] font-black tracking-widest text-slate uppercase">活躍用戶</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold mb-1">$500B+</p>
+                        <p class="text-[10px] font-black tracking-widest text-slate uppercase">資產管理規模 (AUM)</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold mb-1">40+</p>
+                        <p class="text-[10px] font-black tracking-widest text-slate uppercase">全球司法管轄區</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-extrabold mb-1">24/7</p>
+                        <p class="text-[10px] font-black tracking-widest text-slate uppercase">頂級安全監控</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="platform" class="py-32">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                    <div class="max-w-2xl">
+                        <h2 class="text-accent-gold text-xs font-black tracking-widest uppercase mb-4">The Platform</h2>
+                        <h3 class="text-4xl md:text-5xl font-bold tracking-tight">超越數據，<br>洞察財富的每一面。</h3>
+                    </div>
+                    <div class="text-slate max-w-sm text-sm leading-relaxed">
+                        我們不只是顯示數字。我們重新定義了家族辦公室與數據的互動方式，通過智能自動化與深度可視化，消除所有的資訊孤島。
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card p-10 rounded-3xl">
+                        <div class="text-accent-gold mb-8">
+                            <i class="fa-solid fa-layer-group text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">全資產動態聚合</h4>
+                        <p class="text-slate text-sm leading-relaxed">
+                            從傳統股票債券到另類投資（PE/VC、藝術品、房地產），實現一站式自動化數據流接入，告別手動更新。
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 2 -->
+                    <div class="feature-card p-10 rounded-3xl">
+                        <div class="text-accent-gold mb-8">
+                            <i class="fa-solid fa-microchip text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">Doc AI 智能解析</h4>
+                        <p class="text-slate text-sm leading-relaxed">
+                            專利 AI 算法自動讀取數千份 PDF 對帳單。幾秒鐘內提取關鍵資本調用數據，準確率達 99.9%。
+                        </p>
+                    </div>
+                    
+                    <!-- Feature 3 -->
+                    <div class="feature-card p-10 rounded-3xl">
+                        <div class="text-accent-gold mb-8">
+                            <i class="fa-solid fa-diagram-project text-4xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-4">家族資產全景圖譜</h4>
+                        <p class="text-slate text-sm leading-relaxed">
+                            可視化複雜的持有實體與信託結構。清晰展示跨代際的所有權分配，讓傳承計劃一目了然。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Section -->
+        <section id="security" class="py-32 bg-white text-navy rounded-[40px] md:rounded-[80px] mx-4 md:mx-10 my-10 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col lg:flex-row items-center gap-20">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-navy text-xs font-black tracking-widest uppercase mb-6 border-l-4 border-accent-gold pl-4">Security Infrastructure</h2>
+                        <h3 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-8">主權級數據防護。</h3>
+                        <p class="text-slate-dark text-lg mb-10 leading-relaxed">
+                            您的數據隱私是我們的最高原則。財富家族辦公室 提供瑞士級的安全標準，確保所有家族信息在傳輸與存儲過程中始終处于軍用級加密保護之下。
+                        </p>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-shield-check text-accent-gold mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-sm">AES-256 加密</p>
+                                    <p class="text-xs text-slate-dark">銀行級傳輸與存儲標準</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fa-solid fa-fingerprint text-accent-gold mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-sm">生物識別接入</p>
+                                    <p class="text-xs text-slate-dark">多重身份驗證保護</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2">
+                        <div class="relative bg-navy rounded-3xl p-8 md:p-12 shadow-2xl">
+                            <div class="flex items-center justify-between mb-12">
+                                <div class="w-12 h-2 bg-accent-gold rounded-full"></div>
+                                <div class="flex space-x-2">
+                                    <div class="w-2 h-2 bg-slate rounded-full"></div>
+                                    <div class="w-2 h-2 bg-slate rounded-full"></div>
+                                </div>
+                            </div>
+                            <div class="space-y-6">
+                                <div class="h-4 bg-white/5 rounded-full w-3/4"></div>
+                                <div class="h-4 bg-white/5 rounded-full w-1/2"></div>
+                                <div class="h-32 bg-white/5 rounded-2xl w-full flex items-center justify-center border border-white/10 border-dashed text-accent-gold">
+                                    <i class="fa-solid fa-lock text-4xl"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-32 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tightest mb-10">開啟您的財富<br><span class="text-gradient-gold">數字化轉型。</span></h2>
+                <a href="#" class="inline-block bg-accent-gold text-navy px-12 py-6 rounded-full font-black text-xs tracking-widest uppercase hover:bg-white transition-all shadow-xl">
+                    預約一對一專屬演示
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy border-t border-white/5 pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-16 mb-20">
+                <div class="col-span-2">
+                    <a href="#" class="text-3xl md:text-5xl font-thin tracking-[0.2em] uppercase mb-8 block text-accent-gold" style="font-family: 'PingFang HK', 'STHeitiTC-Light', sans-serif; font-weight: 100;">
+                        財富家族辦公室
+                    </a>
+                    <p class="text-slate text-sm max-w-sm leading-relaxed mb-8">
+                        致力於為亞洲家族辦公室提供最可靠的技術底層，保護財富，延續遺產。
+                    </p>
+                    <div class="flex space-x-6 text-slate">
+                        <a href="#" class="hover:text-accent-gold transition-colors"><i class="fa-brands fa-linkedin-in text-lg"></i></a>
+                        <a href="#" class="hover:text-accent-gold transition-colors"><i class="fa-brands fa-twitter text-lg"></i></a>
+                        <a href="#" class="hover:text-accent-gold transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-black tracking-widest uppercase text-white mb-8">產品</h5>
+                    <ul class="space-y-4 text-xs font-bold text-slate uppercase tracking-widest">
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">解決方案</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">平台功能</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">安全合規</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">資源中心</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-[10px] font-black tracking-widest uppercase text-white mb-8">公司</h5>
+                    <ul class="space-y-4 text-xs font-bold text-slate uppercase tracking-widest">
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">關於我們</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">加入我們</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">聯繫聯繫</a></li>
+                        <li><a href="#" class="hover:text-accent-gold transition-colors">隱私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-[10px] font-bold text-slate-dark uppercase tracking-widest">&copy; 2026 財富家族辦公室. All rights reserved.</p>
+                <div class="flex items-center gap-8 text-[10px] font-bold text-slate-dark uppercase tracking-widest">
+                    <span>Hong Kong</span>
+                    <span>Zurich</span>
+                    <span>New York</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom Script -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+rc="assets/js/main.js"></script>
+</body>
+</html>
